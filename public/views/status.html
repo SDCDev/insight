@@ -134,6 +134,10 @@
             <td class="text-right"><a href="/block-index/{{info.blocks}}">{{info.blocks}}</a></td>
           </tr>
           <tr>
+            <td>SDC Supply</td>
+            <td class="text-right">{{info.moneysupply}} SDC</td>
+          </tr>
+          <tr>
             <td>Time Offset</td>
             <td class="text-right">{{info.timeoffset}}</td>
           </tr>
@@ -143,7 +147,11 @@
           </tr>
           <tr>
            <td>Mining Difficulty</td>
-            <td class="text-right">{{info.difficulty}}</td>
+            <td class="text-right">{{info.difficulty['proof-of-work']}}</td>
+          </tr>
+          <tr>
+           <td>Network MH/s</td>
+            <td class="text-right" data-ng-controller="StatusController" data-ng-init="getStatus('MiningInfo')">{{info.netmhashps}}</td>
           </tr>
           <tr>
             <td>Testnet</td>
