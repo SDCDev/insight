@@ -6,7 +6,7 @@ front-end and LevelDB for storage.
 
 Check some screenshots and more details at [insight's project homepage](http://insight.is/).
 
-*Insight* project is now splitted in two repositories. One for the [API](https://github.com/bitpay/insight-api) and for the front-end. This repository is for the front-end, which will install the API as a NPM dependency.
+*Insight* project is now splitted in two repositories. One for the [API](https://github.com/SDCDev/insight-api) and for the front-end. This repository is for the front-end, which will install the API as a NPM dependency.
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ Check some screenshots and more details at [insight's project homepage](http://i
     http://localhost:3001
 
   If *insight* reports problems connecting to **bitcoind** please check the CONFIGURATION section of 
-  [insight-api README](https://github.com/bitpay/insight-api/blob/master/README.md). To set the 
+  [insight-api README](https://github.com/SDCDev/insight-api/blob/master/README.md). To set the 
   environment variables run something like:
   
      $ INSIGHT_NETWORK=livenet BITCOIND_USER=user BITCOIND_PASS=pass INSIGHT_PUBLIC_PATH=public  npm start
@@ -43,13 +43,29 @@ Check some screenshots and more details at [insight's project homepage](http://i
   Please note that the app will need to sync its internal database
   with the blockchain state, which may take some time. You can check
   sync progress from within the web interface. More details about that process
-  on [insight-api README](https://github.com/bitpay/insight-api/blob/master/README.md). 
+  on [insight-api README](https://github.com/SDCDev/insight-api/blob/master/README.md). 
   
   
 ## Nginx Setup
 
 To use Nginx as a reverse proxy for Insight, use the following base [configuration](https://gist.github.com/matiu/bdd5e55ff0ad90b54261)
 
+## Apache Setup
+
+To use Apache as a reverse proxy for Insight, use the following configuration:
+
+```
+  ProxyRequests Off
+  ProxyPreserveHost On
+
+  <Proxy *>
+    Order deny,allow
+    Allow from all
+  </Proxy>
+
+  ProxyPass / http://localhost:3000/ retry=0
+  ProxyPassReverse / http://localhost:3000/ retry=0
+```
 
 ## Development
 
