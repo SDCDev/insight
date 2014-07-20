@@ -58,6 +58,10 @@
             </td>
           </tr>
           <tr>
+            <td><strong>Block Type</strong></td>
+            <td class="text-right text-muted">{{block.blockType}}</td>
+          </tr> 
+          <tr>
             <td><strong>Block Reward</strong></td>
             <td class="text-right text-muted">{{$root.currency.getConvertion(block.reward) || block.reward + ' SDC'}}</td>
           </tr> 
