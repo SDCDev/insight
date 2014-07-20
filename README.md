@@ -52,7 +52,7 @@ To use Nginx as a reverse proxy for Insight, use the following base [configurati
 
 ## Apache Setup
 
-To use Apache as a reverse proxy for Insight, use the following configuration:
+To use Apache as a reverse proxy for Insight, use the following base configuration:
 
 ```
   ProxyRequests Off
