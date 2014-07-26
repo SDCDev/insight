@@ -5,7 +5,7 @@ angular.module('insight').config(function($routeProvider) {
   $routeProvider.
     when('/block/:blockHash', {
       templateUrl: '/views/block.html',
-      title: 'SDCoin Block '
+      title: 'ShadowCoin Block '
     }).
     when('/block-index/:blockHeight', {
       controller: 'BlocksController',
@@ -13,7 +13,7 @@ angular.module('insight').config(function($routeProvider) {
     }).
     when('/tx/:txId/:v_type?/:v_index?', {
       templateUrl: '/views/transaction.html',
-      title: 'SDCoin Transaction '
+      title: 'ShadowCoin Transaction '
     }).
     when('/', {
       templateUrl: '/views/index.html',
@@ -21,15 +21,15 @@ angular.module('insight').config(function($routeProvider) {
     }).
     when('/blocks', {
       templateUrl: '/views/block_list.html',
-      title: 'SDCoin Blocks solved Today'
+      title: 'ShadowCoin Blocks solved Today'
     }).
     when('/blocks-date/:blockDate/:startTimestamp?', {
       templateUrl: '/views/block_list.html',
-      title: 'SDCoin Blocks solved '
+      title: 'ShadowCoin Blocks solved '
     }).
     when('/address/:addrStr', {
       templateUrl: '/views/address.html',
-      title: 'SDCoin Address '
+      title: 'ShadowCoin Address '
     }).
     when('/status', {
       templateUrl: '/views/status.html',
