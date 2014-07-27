@@ -186,7 +186,7 @@
 <div class="line-top row" data-ng-hide="!tx">
   <div class="col-xs-12 col-sm-4 col-md-4">
     <span data-ng-show=" !tx.isCoinStakeOut && !tx.isCoinBase &&  !isNaN(parseFloat(tx.fees))" class="txvalues txvalues-default">Fees: {{$root.currency.getConvertion(tx.fees) || tx.fees + 'SDC'}} </span>
-    <span data-ng-show="tx.isCoinStakeOut && !isNaN(parseFloat(tx.fees))" class="txvalues txvalues-default">Interest: {{$root.currency.getConvertion(tx.fees*-1.0) || (tx.fees*-1.0) + 'SDC'}} </span>
+    <span data-ng-show="tx.isCoinStakeOut && !isNaN(parseFloat(tx.fees))" class="txvalues txvalues-default">Reward: {{$root.currency.getConvertion(tx.fees*-1.0) || (tx.fees*-1.0) + 'SDC'}} </span>
   </div>
   <div class="col-xs-12 col-sm-8 col-md-8 text-right">
     <span data-ng-show="tx.confirmations" class="txvalues txvalues-success">{{tx.confirmations}} Confirmations</span>
