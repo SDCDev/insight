@@ -2,14 +2,17 @@
   {{currency.symbol}} <span class="caret"></span>
 </a>
 <ul class="dropdown-menu">
-  <!--li>
-  <a href="#" data-ng-click="setCurrency('USD')" data-ng-class="{active: currency.symbol == 'USD'}">USD</a>
-  </li-->
   <li>
-  <a href="#" data-ng-click="setCurrency('SDC')" data-ng-class="{active: currency.symbol == 'SDC'}">SDC</a>
+  <a data-ng-click="setCurrency('USD')" data-ng-class="{active: currency.symbol == 'USD'}">USD</a>
   </li>
   <li>
-  <a href="#" data-ng-click="setCurrency('mSDC')" data-ng-class="{active: currency.symbol == 'mSDC'}">mSDC</a>
-  </li> 
+  <a data-ng-click="setCurrency('SDC')" data-ng-class="{active: currency.symbol == 'SDC'}">SDC</a>
+  </li>
+  <li>
+  <a data-ng-click="setCurrency('mSDC')" data-ng-class="{active: currency.symbol == 'mSDC'}">mSDC</a>
+  </li>
+  <li>
+  <a data-ng-click="setCurrency('bits')" data-ng-class="{active: currency.symbol == 'bits'}">bits</a>
+  </li>
 </ul>
 

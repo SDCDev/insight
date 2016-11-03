@@ -4,39 +4,47 @@
 angular.module('insight').config(function($routeProvider) {
   $routeProvider.
     when('/block/:blockHash', {
-      templateUrl: '/views/block.html',
-      title: 'Shadow Block '
+      templateUrl: 'views/block.html',
+      title: 'Umbra Block '
     }).
     when('/block-index/:blockHeight', {
       controller: 'BlocksController',
-      templateUrl: '/views/redirect.html'
+      templateUrl: 'views/redirect.html'
+    }).
+    when('/tx/send', {
+      templateUrl: 'views/transaction_sendraw.html',
+      title: 'Broadcast Raw Transaction'
     }).
     when('/tx/:txId/:v_type?/:v_index?', {
-      templateUrl: '/views/transaction.html',
-      title: 'Shadow Transaction '
+      templateUrl: 'views/transaction.html',
+      title: 'Umbra Transaction '
     }).
     when('/', {
-      templateUrl: '/views/index.html',
+      templateUrl: 'views/index.html',
       title: 'Home'
     }).
     when('/blocks', {
-      templateUrl: '/views/block_list.html',
-      title: 'Shadow Blocks solved Today'
+      templateUrl: 'views/block_list.html',
+      title: 'Umbra Blocks solved Today'
     }).
     when('/blocks-date/:blockDate/:startTimestamp?', {
-      templateUrl: '/views/block_list.html',
-      title: 'Shadow Blocks solved '
+      templateUrl: 'views/block_list.html',
+      title: 'Umbra Blocks solved '
     }).
     when('/address/:addrStr', {
-      templateUrl: '/views/address.html',
-      title: 'Shadow Address '
+      templateUrl: 'views/address.html',
+      title: 'Umbra Address '
     }).
     when('/status', {
-      templateUrl: '/views/status.html',
+      templateUrl: 'views/status.html',
       title: 'Status'
+    }).
+    when('/messages/verify', {
+      templateUrl: 'views/messages_verify.html',
+      title: 'Verify Message'
     })
     .otherwise({
-      templateUrl: '/views/404.html',
+      templateUrl: 'views/404.html',
       title: 'Error'
     });
 });
@@ -47,7 +55,9 @@ angular.module('insight')
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('!');
   })
-  .run(function($rootScope, $route, $location, $routeParams, $anchorScroll, ngProgress) {
+  .run(function($rootScope, $route, $location, $routeParams, $anchorScroll, ngProgress, gettextCatalog, amMoment) {
+    gettextCatalog.currentLanguage = defaultLanguage;
+    amMoment.changeLocale(defaultLanguage);
     $rootScope.$on('$routeChangeStart', function() {
       ngProgress.start();
     });
